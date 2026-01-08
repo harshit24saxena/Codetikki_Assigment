@@ -1,9 +1,10 @@
-import './App.css'
+import { Layout } from "./Layout";
+
 
 export default function App() {
   return (
-    <main>
-      React ⚛️ + Vite ⚡ + Replit
-    </main>
+    <div className='container'>
+      <Layout />
+    </div>
   )
 }
