@@ -15,13 +15,16 @@
 
 body {
   font-family: Inter, sans-serif;
-  background-color:#0f172a;
-  color: var(--background-light);
+  background-color:#20283c;
+  color: #f6f7f8;
 }
 .container{
   width: 80vw;
+  height: 100vh;
   margin: 0 auto;
   padding: 20px;
+  background: #0f172a;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .header {
@@ -130,6 +133,11 @@ body {
   border-bottom: 1px solid #0f172a
 }
 
+.note-footer{
+  padding-top:10px;
+
+}
+
 .note-card h3 {
   margin: 10px 0;
 }
@@ -138,6 +146,7 @@ body {
   font-size: 12px;
   font-weight: bold;
   opacity: 0.7;
+  margin-right: 10px;
 }
 
 .date {
@@ -152,6 +161,7 @@ body {
   height: 20px;
   width: 20px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 /* Card Colors */
@@ -159,3 +169,100 @@ body {
 .work { background: #bbf7d0; }
 .home { background: #e9d5ff; }
 .ideas { background: #fef9c3; }
+
+
+/* Loaders */
+.skeleton-card {
+  background: #1e293b;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.skeleton-header{
+  background: #1e293b;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.skeleton-title {
+  height: 18px;
+  width: 70%;
+  border-radius: 6px;
+  background: #334155;
+  margin-bottom: 12px;
+}
+
+.skeleton-line {
+  height: 12px;
+  width: 100%;
+  border-radius: 6px;
+  background: #334155;
+  margin-bottom: 8px;
+}
+
+.skeleton-line.short {
+  width: 50%;
+}
+
+/* shimmer animation */
+.skeleton-header,
+.skeleton-card,
+.skeleton-title,
+.skeleton-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-header::after,
+.skeleton-card::after,
+.skeleton-title::after,
+.skeleton-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}
+
+.single-note {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #60a5fa;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.single-note .meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+.single-note .content {
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+

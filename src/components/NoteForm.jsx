@@ -4,20 +4,16 @@ function NoteForm({ onAddNote }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("Personal");
-  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!title.trim()) {
-      setError("Title is required");
-      return;
-    }
+    const CheckedContent = content.trim().length == 0 ? "No content" : content
 
     const newNote = {
       id: Date.now(),
       title,
-      content,
+      content:CheckedContent,
       category,
       date: new Date().toLocaleDateString(),
     };
@@ -28,7 +24,6 @@ function NoteForm({ onAddNote }) {
     setTitle("");
     setContent("");
     setCategory("Personal");
-    setError("");
   };
 
   return (
@@ -41,7 +36,6 @@ function NoteForm({ onAddNote }) {
         value={title}
         onChange={(e) => {
           setTitle(e.target.value);
-          setError("");
         }}
       />
 

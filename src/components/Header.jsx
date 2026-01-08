@@ -1,11 +1,11 @@
 
-function Header({showNoteForm}) {
+function Header({showNoteForm, TotalNotes}) {
 
   return (
     <div className="header">
       <div>
         <h1>All Notes</h1>
-        <p className="muted">12 notes</p>
+        <p className="muted">{TotalNotes} notes</p>
       </div>
 
       <div className="header-actions">
